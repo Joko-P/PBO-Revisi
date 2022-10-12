@@ -37,7 +37,7 @@ public class Tiket_Main {
     private static String IDGenerator(String prefix, Date a) {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
         String strDate = dateFormat.format(a);  
-        String final_id = prefix + a;
+        String final_id = prefix + strDate;
         return(final_id);
     }
     
