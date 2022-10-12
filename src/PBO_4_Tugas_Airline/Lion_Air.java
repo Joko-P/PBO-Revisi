@@ -23,7 +23,9 @@ public class Lion_Air extends Tiket {
         System.out.println("Kota Asal : " + this.getAsal());
         System.out.println("Kota Tujuan : " + this.getTujuan());
         System.out.println("Tanggal Berangkat : " + dateFormat.format(this.getDepart()));
-        System.out.println("Tanggal Kembali : " + dateFormat.format(this.getArrival()));
+        if (this.getArrival() != null) {
+            System.out.println("Tanggal Kembali : " + dateFormat.format(this.getArrival()));
+        }
         System.out.println("Nomor Penerbangan : " + this.getPlane_no());
         System.out.println("Nomor Kursi : " + this.getSeat());
         System.out.println("Harga Tiket : Rp " + this.getHarga());
