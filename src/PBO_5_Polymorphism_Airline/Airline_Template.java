@@ -1,25 +1,16 @@
 package PBO_5_Polymorphism_Airline;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-public class Airline_Template{
+public class Airline_Template extends Tiket{
     int passenger_amount, harga, total;
     String tujuan, plane_no, seat;
-    String bookingID, nik, nama, asal;
-    char sex;
-    Date depart, arrival;
 
     public Airline_Template(int passenger_amount, String tujuan, String plane_no, String seat, String bookingID, String nik, String nama, char sex, Date depart, Date arrival, String asal) {
+        super(bookingID, nik, nama, sex, depart, arrival, asal);
         this.passenger_amount = passenger_amount;
         this.tujuan = tujuan;
         this.plane_no = plane_no;
         this.seat = seat;
-        this.bookingID = bookingID;
-        this.nik = nik;
-        this.nama = nama;
-        this.sex = sex;
-        this.depart = depart;
-        this.arrival = arrival;
-        this.asal = asal;
     }
     
     public void getData() {
@@ -68,33 +59,5 @@ public class Airline_Template{
 
     public String getSeat() {
         return seat;
-    }
-    
-    public String getBookingID() {
-        return bookingID;
-    }
-
-    public String getNik() {
-        return nik;
-    }
-
-    public String getNama() {
-        return nama;
-    }
-
-    public char getSex() {
-        return sex;
-    }
-
-    public Date getDepart() {
-        return depart;
-    }
-
-    public Date getArrival() {
-        return arrival;
-    }
-
-    public String getAsal() {
-        return asal;
     }
 }
