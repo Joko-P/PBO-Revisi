@@ -246,7 +246,7 @@ public class Tiket_Main {
                     } while (kondisi == true);
                     seat = String.valueOf(i + acak);
 
-                    Ticket[i].Insert_Data(jml, city_2, plane_no, seat, bookingID, nik, nama, sex, date_1, date_2, city_1);
+                    Ticket[i] = new Lion_Air(jml, city_2, plane_no, seat, bookingID, nik, nama, sex, date_1, date_2, city_1);
                 }
                 
                 for (int i = 0; i < Ticket.length; i++) {
@@ -280,7 +280,7 @@ public class Tiket_Main {
                     } while (kondisi == true);
                     seat = String.valueOf(i + acak);
 
-                    Ticket[i].Insert_Data(jml, city_2, plane_no, seat, bookingID, nik, nama, sex, date_1, date_2, city_1);
+                    Ticket[i] = new Citilink(jml, city_2, plane_no, seat, bookingID, nik, nama, sex, date_1, date_2, city_1);
                 }
                 
                 for (int i = 0; i < Ticket.length; i++) {

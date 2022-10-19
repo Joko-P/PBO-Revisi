@@ -8,7 +8,7 @@ public class Airline_Template{
     char sex;
     Date depart, arrival;
 
-    public void Insert_Data(int passenger_amount, String tujuan, String plane_no, String seat, String bookingID, String nik, String nama, char sex, Date depart, Date arrival, String asal) {
+    public Airline_Template(int passenger_amount, String tujuan, String plane_no, String seat, String bookingID, String nik, String nama, char sex, Date depart, Date arrival, String asal) {
         this.passenger_amount = passenger_amount;
         this.tujuan = tujuan;
         this.plane_no = plane_no;

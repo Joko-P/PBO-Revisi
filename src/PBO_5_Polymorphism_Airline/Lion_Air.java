@@ -1,6 +1,11 @@
 package PBO_5_Polymorphism_Airline;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 public class Lion_Air extends Airline_Template {
+
+    public Lion_Air(int passenger_amount, String tujuan, String plane_no, String seat, String bookingID, String nik, String nama, char sex, Date depart, Date arrival, String asal) {
+        super(passenger_amount, tujuan, plane_no, seat, bookingID, nik, nama, sex, depart, arrival, asal);
+    }
     
     public void getData() {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm");
