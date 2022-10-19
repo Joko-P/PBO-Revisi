@@ -5,6 +5,12 @@ public class MainClass {
         
         item.Angka();
         item.Bilang();
+        
+        B items = new B();
+        
+        items.Angka();
+        items.Bilang();
+        items.Test();
     }
     
 }
