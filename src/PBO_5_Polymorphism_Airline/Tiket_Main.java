@@ -1,4 +1,4 @@
-package PBO_4_Tugas_Airline;
+package PBO_5_Polymorphism_Airline;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -223,7 +223,7 @@ public class Tiket_Main {
             if (maskapai == '1') {
                 System.out.println("\n===== SELAMAT DATANG DI LION AIR =====\n");
                 System.out.println("Silahkan isi data penumpang!");
-                Lion_Air Ticket[] = new Lion_Air[jml];
+                Airline_Template Ticket[] = new Lion_Air[jml];
                 plane_no = PlaneGenerator("JT");
                 int acak = ran.nextInt(50);
                 
@@ -246,7 +246,7 @@ public class Tiket_Main {
                     } while (kondisi == true);
                     seat = String.valueOf(i + acak);
 
-                    Ticket[i] = new Lion_Air(jml, city_2, plane_no, seat, bookingID, nik, nama, sex, date_1, date_2, city_1);
+                    Ticket[i].Insert_Data(jml, city_2, plane_no, seat, bookingID, nik, nama, sex, date_1, date_2, city_1);
                 }
                 
                 for (int i = 0; i < Ticket.length; i++) {
@@ -257,7 +257,7 @@ public class Tiket_Main {
             } else if (maskapai == '2') {
                 System.out.println("\n===== SELAMAT DATANG DI CITILINK =====\n");
                 System.out.println("Silahkan isi data penumpang!");
-                Citilink Ticket[] = new Citilink[jml];
+                Airline_Template Ticket[] = new Citilink[jml];
                 plane_no = PlaneGenerator("QG");
                 int acak = ran.nextInt(50);
                 
@@ -280,7 +280,7 @@ public class Tiket_Main {
                     } while (kondisi == true);
                     seat = String.valueOf(i + acak);
 
-                    Ticket[i] = new Citilink(jml, city_2, plane_no, seat, bookingID, nik, nama, sex, date_1, date_2, city_1);
+                    Ticket[i].Insert_Data(jml, city_2, plane_no, seat, bookingID, nik, nama, sex, date_1, date_2, city_1);
                 }
                 
                 for (int i = 0; i < Ticket.length; i++) {

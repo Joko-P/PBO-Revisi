@@ -1,22 +1,30 @@
-package PBO_4_Tugas_Airline;
+package PBO_5_Polymorphism_Airline;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-public class Citilink extends Tiket{
-    private int passenger_amount, harga, total;
-    private String tujuan, plane_no, seat;
+public class Airline_Template{
+    int passenger_amount, harga, total;
+    String tujuan, plane_no, seat;
+    String bookingID, nik, nama, asal;
+    char sex;
+    Date depart, arrival;
 
-    public Citilink(int passenger_amount, String tujuan, String plane_no, String seat, String bookingID, String nik, String nama, char sex, Date depart, Date arrival, String asal) {
-        super(bookingID, nik, nama, sex, depart, arrival, asal);
+    public void Insert_Data(int passenger_amount, String tujuan, String plane_no, String seat, String bookingID, String nik, String nama, char sex, Date depart, Date arrival, String asal) {
         this.passenger_amount = passenger_amount;
         this.tujuan = tujuan;
         this.plane_no = plane_no;
         this.seat = seat;
+        this.bookingID = bookingID;
+        this.nik = nik;
+        this.nama = nama;
+        this.sex = sex;
+        this.depart = depart;
+        this.arrival = arrival;
+        this.asal = asal;
     }
     
-    @Override
     public void getData() {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm");
-        System.out.println("\n===== PREVIEW TIKET CITILINK =====");
+        System.out.println("\n===== PREVIEW TIKET UNKNOWN =====");
         System.out.println("Booking ID : " + this.getBookingID());
         System.out.println("NIK : " + this.getNik());
         System.out.println("Nama / Sex : " + this.getNama() + " / " + this.getSex());
@@ -36,29 +44,7 @@ public class Citilink extends Tiket{
     }
     
     public int TentukanHarga (String asal, String tujuan) {
-        if (asal.equalsIgnoreCase("surabaya")) {
-            if (tujuan.equalsIgnoreCase("bali") || tujuan.equalsIgnoreCase("lombok")) {
-                this.harga = 700000;
-            } else if (tujuan.equalsIgnoreCase("jakarta") || tujuan.equalsIgnoreCase("yogyakarta")) {
-                this.harga = 800000;
-            } else if (tujuan.equalsIgnoreCase("balikpapan") || tujuan.equalsIgnoreCase("makassar")) {
-                this.harga = 850000;
-            } else {
-                this.harga = 0;
-            }
-        } else if (asal.equalsIgnoreCase("jakarta")) {
-            if (tujuan.equalsIgnoreCase("bali") || tujuan.equalsIgnoreCase("lombok")) {
-                this.harga = 1000000;
-            } else if (tujuan.equalsIgnoreCase("surabaya") || tujuan.equalsIgnoreCase("yogyakarta")) {
-                this.harga = 750000;
-            } else if (tujuan.equalsIgnoreCase("balikpapan") || tujuan.equalsIgnoreCase("makassar")) {
-                this.harga = 900000;
-            } else {
-                this.harga = 0;
-            }
-        } else {
-            this.harga = 0;
-        }
+        this.harga = 0;
         return harga;
     }
     
@@ -84,4 +70,31 @@ public class Citilink extends Tiket{
         return seat;
     }
     
+    public String getBookingID() {
+        return bookingID;
+    }
+
+    public String getNik() {
+        return nik;
+    }
+
+    public String getNama() {
+        return nama;
+    }
+
+    public char getSex() {
+        return sex;
+    }
+
+    public Date getDepart() {
+        return depart;
+    }
+
+    public Date getArrival() {
+        return arrival;
+    }
+
+    public String getAsal() {
+        return asal;
+    }
 }
